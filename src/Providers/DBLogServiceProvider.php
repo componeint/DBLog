@@ -51,10 +51,10 @@ class DBLogServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__.'/../Config/config.php' => config_path('dblog.php'),
+            __DIR__.'/../../Config/config.php' => config_path('dblog.php'),
         ]);
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'dblog'
+            __DIR__.'/../../Config/config.php', 'dblog'
         );
     }
 
@@ -67,7 +67,7 @@ class DBLogServiceProvider extends ServiceProvider
     {
         $viewPath = base_path('resources/views/components/dblog');
 
-        $sourcePath = __DIR__.'/../Resources/views';
+        $sourcePath = __DIR__.'/../../Resources/views';
 
         $this->publishes([
             $sourcePath => $viewPath
@@ -90,7 +90,7 @@ class DBLogServiceProvider extends ServiceProvider
         if (is_dir($langPath)) {
             $this->loadTranslationsFrom($langPath, 'dblog');
         } else {
-            $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'dblog');
+            $this->loadTranslationsFrom(__DIR__ .'/../../Resources/lang', 'dblog');
         }
     }
 
